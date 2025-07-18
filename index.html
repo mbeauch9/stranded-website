@@ -1,89 +1,24 @@
-// pages/index.tsx
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stranded</title>
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Welcome to Stranded</h1>
+  </header>
 
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+  <section>
+    <h2>Fast roadside assistance, on demand.</h2>
+    <p>Request a tow or join as a partner.</p>
+  </section>
 
-export default function Home() {
-  return (
-    <div className="min-h-screen bg-white text-gray-800">
-      <header className="bg-black text-white p-6 shadow-md">
-        <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Stranded</h1>
-          <nav className="space-x-4">
-            <Link href="#how-it-works" className="hover:underline">How It Works</Link>
-            <Link href="/partners" className="hover:underline">Partners</Link>
-            <Link href="/experience" className="hover:underline">Experience</Link>
-          </nav>
-        </div>
-      </header>
-
-      <section className="text-center py-24 px-6 bg-gray-50">
-        <h2 className="text-4xl font-bold mb-6">Roadside help, reimagined.</h2>
-        <p className="text-lg mb-10 max-w-2xl mx-auto">
-          Stranded connects drivers in need with nearby towing partners instantly. Fast. Fair. Frictionless.
-        </p>
-        <div className="space-x-4">
-          <Link href="/request">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white text-lg">Request a Tow</Button>
-          </Link>
-          <Link href="/partners">
-            <Button className="bg-gray-800 hover:bg-black text-white text-lg">Join as a Partner</Button>
-          </Link>
-        </div>
-      </section>
-
-      <section id="how-it-works" className="py-20 px-6">
-        <h3 className="text-3xl font-bold text-center mb-12">How It Works</h3>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <Card>
-            <CardContent className="p-6">
-              <h4 className="text-xl font-semibold mb-2">1. Request</h4>
-              <p>Open the app, drop a pin, and request help. We find a nearby partner who’s ready to move.</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="p-6">
-              <h4 className="text-xl font-semibold mb-2">2. Match</h4>
-              <p>We instantly dispatch a vetted towing partner. You’ll see their ETA, contact info, and reviews.</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="p-6">
-              <h4 className="text-xl font-semibold mb-2">3. Go</h4>
-              <p>Help arrives. No membership fees. No endless waits. Just fast, honest roadside help.</p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      <section className="bg-blue-50 py-20 px-6">
-        <h3 className="text-3xl font-bold text-center mb-12">Our Tenets</h3>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <Card>
-            <CardContent className="p-6">
-              <h4 className="text-xl font-semibold mb-2">Speed</h4>
-              <p>We prioritize rapid dispatch and arrival — no more waiting hours on the side of the road.</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="p-6">
-              <h4 className="text-xl font-semibold mb-2">Transparency</h4>
-              <p>Clear pricing. Real-time tracking. Know who’s coming and when — no surprises.</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="p-6">
-              <h4 className="text-xl font-semibold mb-2">Empowerment</h4>
-              <p>Our partners are independent professionals earning fairly. We support their freedom and success.</p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      <footer className="bg-black text-white py-12 text-center">
-        <p className="text-sm">© {new Date().getFullYear()} Stranded. All rights reserved.</p>
-      </footer>
-    </div>
-  );
-}
+  <footer>
+    <p>© 2025 Stranded</p>
+  </footer>
+</body>
+</html>
