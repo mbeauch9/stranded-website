@@ -1,73 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stranded – Tow Trucks On-Demand</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-white text-gray-800">
-  <!-- Hero -->
-  <section class="bg-black text-white py-20 px-6 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">Tow Trucks On-Demand</h1>
-    <p class="text-lg md:text-xl mb-6">No phone calls. No surprises. Just fast, reliable roadside help—wherever you are.</p>
-    <a href="#waitlist" class="bg-yellow-400 text-black font-bold py-3 px-6 rounded-full">Join the Waitlist</a>
-  </section>
+// pages/index.tsx
 
-  <!-- Customer Benefits -->
-  <section class="py-16 px-6 max-w-4xl mx-auto">
-    <h2 class="text-2xl font-bold mb-4">Why Stranded?</h2>
-    <ul class="space-y-4">
-      <li>✅ Flat-rate quotes before you commit</li>
-      <li>✅ Track your driver in real time</li>
-      <li>✅ No more calling multiple shops or waiting on hold with AAA</li>
-      <li>✅ Choose your destination: mechanic, dealership, or home</li>
-    </ul>
-  </section>
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 
-  <!-- Partner Benefits -->
-  <section class="bg-gray-100 py-16 px-6 max-w-4xl mx-auto">
-    <h2 class="text-2xl font-bold mb-4">Tow Partners Wanted</h2>
-    <ul class="space-y-4">
-      <li>💼 Set your own hours</li>
-      <li>💼 Get paid fast with in-app payments</li>
-      <li>💼 No upfront costs to join</li>
-      <li>💼 We bring the customers to you</li>
-    </ul>
-  </section>
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-white text-gray-800">
+      <header className="bg-black text-white p-6 shadow-md">
+        <div className="container mx-auto flex justify-between items-center">
+          <h1 className="text-2xl font-bold">Stranded</h1>
+          <nav className="space-x-4">
+            <Link href="#how-it-works" className="hover:underline">How It Works</Link>
+            <Link href="/partners" className="hover:underline">Partners</Link>
+            <Link href="/experience" className="hover:underline">Experience</Link>
+          </nav>
+        </div>
+      </header>
 
-  <!-- FAQ -->
-  <section class="py-16 px-6 max-w-4xl mx-auto">
-    <h2 class="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
-    <div class="space-y-4">
-      <div>
-        <h3 class="font-semibold">How does Stranded work for drivers?</h3>
-        <p>Drivers go online, accept jobs near them, complete the tow, and get paid through the app. No dispatch hassles.</p>
-      </div>
-      <div>
-        <h3 class="font-semibold">Where is Stranded available?</h3>
-        <p>We’re launching in select U.S. cities. Join the waitlist to get early access.</p>
-      </div>
-      <div>
-        <h3 class="font-semibold">How much does a tow cost?</h3>
-        <p>Pricing is flat-rate and shown before you book, based on vehicle type, distance, and time of day.</p>
-      </div>
+      <section className="text-center py-24 px-6 bg-gray-50">
+        <h2 className="text-4xl font-bold mb-6">Roadside help, reimagined.</h2>
+        <p className="text-lg mb-10 max-w-2xl mx-auto">
+          Stranded connects drivers in need with nearby towing partners instantly. Fast. Fair. Frictionless.
+        </p>
+        <div className="space-x-4">
+          <Link href="/request">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white text-lg">Request a Tow</Button>
+          </Link>
+          <Link href="/partners">
+            <Button className="bg-gray-800 hover:bg-black text-white text-lg">Join as a Partner</Button>
+          </Link>
+        </div>
+      </section>
+
+      <section id="how-it-works" className="py-20 px-6">
+        <h3 className="text-3xl font-bold text-center mb-12">How It Works</h3>
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <Card>
+            <CardContent className="p-6">
+              <h4 className="text-xl font-semibold mb-2">1. Request</h4>
+              <p>Open the app, drop a pin, and request help. We find a nearby partner who’s ready to move.</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-6">
+              <h4 className="text-xl font-semibold mb-2">2. Match</h4>
+              <p>We instantly dispatch a vetted towing partner. You’ll see their ETA, contact info, and reviews.</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-6">
+              <h4 className="text-xl font-semibold mb-2">3. Go</h4>
+              <p>Help arrives. No membership fees. No endless waits. Just fast, honest roadside help.</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <section className="bg-blue-50 py-20 px-6">
+        <h3 className="text-3xl font-bold text-center mb-12">Our Tenets</h3>
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <Card>
+            <CardContent className="p-6">
+              <h4 className="text-xl font-semibold mb-2">Speed</h4>
+              <p>We prioritize rapid dispatch and arrival — no more waiting hours on the side of the road.</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-6">
+              <h4 className="text-xl font-semibold mb-2">Transparency</h4>
+              <p>Clear pricing. Real-time tracking. Know who’s coming and when — no surprises.</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-6">
+              <h4 className="text-xl font-semibold mb-2">Empowerment</h4>
+              <p>Our partners are independent professionals earning fairly. We support their freedom and success.</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <footer className="bg-black text-white py-12 text-center">
+        <p className="text-sm">© {new Date().getFullYear()} Stranded. All rights reserved.</p>
+      </footer>
     </div>
-  </section>
-
-  <!-- Waitlist Form -->
-  <section id="waitlist" class="bg-black text-white py-16 px-6 text-center">
-    <h2 class="text-2xl font-bold mb-4">Get Early Access</h2>
-    <p class="mb-6">We’re launching soon. Be the first to know when Stranded goes live in your city.</p>
-    <form action="https://formspree.io/f/yourformid" method="POST" class="max-w-md mx-auto">
-      <input type="email" name="email" placeholder="Your email" required class="w-full px-4 py-2 mb-4 rounded text-black" />
-      <button type="submit" class="bg-yellow-400 text-black font-bold py-2 px-6 rounded-full">Join the Waitlist</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-6 text-center text-sm text-gray-500">
-    &copy; 2025 Stranded, Inc. All rights reserved.
-  </footer>
-</body>
-</html>
+  );
+}
